@@ -1,0 +1,17 @@
+{
+  "name": "metal-cpp",
+  "version": "1.0.0",
+  "homepage": "https://developer.apple.com/metal/cpp/",
+  "description": "Metal C++ Personal Port",
+  "license": "MIT",
+  "dependencies": [
+    {
+      "name" : "vcpkg-cmake",
+      "host" : true
+    },
+    {
+      "name" : "vcpkg-cmake-config",
+      "host" : true
+    }
+  ]
+}
