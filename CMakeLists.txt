@@ -11,16 +11,16 @@ endif()
 
 include(CMakePackageConfigHelpers)
 
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/metal-cpp-config-version.cmake"
+    VERSION "${PROJECT_VERSION}"
+    COMPATIBILITY SameMajorVersion
+)
+
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/metal-cpp-config.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/metal-cpp-config.cmake"
-    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/metal-cpp
-)
-
-write_basic_package_version_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/metal-cpp-config-version.cmake"
-    VERSION ${PROJECT_VERSION}
-    COMPATIBILITY SameMajorVersion
+    INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/metal-cpp"
 )
 
 install(
