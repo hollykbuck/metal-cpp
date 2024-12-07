@@ -9,13 +9,13 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/metal-cpp-config.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/metal-cpp-config.cmake
+    "${CMAKE_CURRENT_SOURCE_DIR}/metal-cpp-config.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/metal-cpp-config.cmake"
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/metal-cpp
 )
 
-write-basic-package-version-file(
-    ${CMAKE_CURRENT_BINARY_DIR}/metal-cpp-config-version.cmake
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/metal-cpp-config-version.cmake"
     VERSION ${PROJECT_VERSION}
     COMPATIBILITY SameMajorVersion
 )
