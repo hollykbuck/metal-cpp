@@ -1,0 +1,15 @@
+@PACKAGE_INIT@
+
+set(metal-cpp_INCLUDE_DIRS "@CMAKE_INSTALL_FULL_INCLUDEDIR@")
+set(metal-cpp_VERSION "@PROJECT_VERSION@")
+include(CMakeFindDependencyMacro)
+
+add_library(metal-cpp INTERFACE)
+target_include_directories(metal-cpp INTERFACE
+    $<BUILD_INTERFACE:${metal-cpp_INCLUDE_DIRS}>
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+)
+
+if(NOT TARGET metal-cpp::metal-cpp)
+    add_library(metal-cpp::metal-cpp ALIAS metal-cpp)
+endif()
