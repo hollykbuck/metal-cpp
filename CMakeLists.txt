@@ -4,7 +4,10 @@ project(metal-cpp VERSION 1.0.0)
 
 include(GNUInstallDirs)
 
-install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+# if not debug, install header
+if(NOT CMAKE_BUILD_TYPE MATCHES Debug)
+    install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+endif()
 
 include(CMakePackageConfigHelpers)
 
